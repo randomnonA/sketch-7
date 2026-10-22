@@ -17,6 +17,8 @@ function draw() {
   background("salmon");
   image(webcam, 0, 0, webcam.width, webcam.height);
   let vol = mic.getLevel();
+  //I wanted the volume to effect the frameRate since I was using random shades for the house
+  //The camera fps also gets faster the louder you are
   let volSpeed = map(vol, 0, 1, 1, 30);
   frameRate(volSpeed);
   
