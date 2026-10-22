@@ -1,8 +1,10 @@
 let webcam;
 let mic;
+let sound;
 
-function setup() {
+async function setup() {
   createCanvas(900, 900);
+  sound = await loadSound('media/freesound_community-underwater-white-noise-46423.mp3');
   webcam = createCapture(VIDEO,{flipped:true});
   webcam.size(440,400)
   webcam.hide();
@@ -32,4 +34,8 @@ function draw() {
   square(510, 810, 90)
   
   filter(INVERT);
+}
+
+function mousePressed() {
+  sound.play();
 }
