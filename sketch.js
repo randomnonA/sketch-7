@@ -8,12 +8,29 @@ function setup() {
   webcam.hide();
   mic = new p5.AudioIn();
   mic.start();
+  frameRate(5);
 }
 
 function draw() {
-  background(0, 0, 0);
+  background("salmon");
   image(webcam, 0, 0, webcam.width, webcam.height);
   filter(INVERT);
+  
+  fill('red');
+  noStroke();
+  rect(400, 600, 20, 30)
+  
+  
+  
+  push();
+  fill(random(255));
+  noStroke();
+  rect(400, 600, 300, 300);
+  pop();
+  
+  fill('red');
+  noStroke();
+  square(510, 810, 90)
   
   
 }
