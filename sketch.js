@@ -14,13 +14,14 @@ function setup() {
 function draw() {
   background("salmon");
   image(webcam, 0, 0, webcam.width, webcam.height);
-  filter(INVERT);
+  let vol = mic.getLevel();
+  let volSpeed = map(vol, 0, 0.5, 1, 30);
+  frameRate(volSpeed);
   
-  fill('red');
-  noStroke();
-  rect(400, 600, 20, 30)
-  
-  
+  fill('green');
+  stroke('yellow');
+  strokeWeight(10);
+  triangle(350, 600, 750, 600, 550, 450);
   
   push();
   fill(random(255));
@@ -28,9 +29,7 @@ function draw() {
   rect(400, 600, 300, 300);
   pop();
   
-  fill('red');
-  noStroke();
   square(510, 810, 90)
   
-  
+  filter(INVERT);
 }
