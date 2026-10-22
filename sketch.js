@@ -11,8 +11,8 @@ function setup() {
 }
 
 function draw() {
-  background(255, 255, 255);
-  image(webcam, 0, 0, width, width * webcam.height / webcam.width);
+  background(0, 0, 0);
+  image(webcam, 0, 0, webcam.width, webcam.height);
   filter(INVERT);
   
   
