@@ -17,7 +17,7 @@ function draw() {
   background("salmon");
   image(webcam, 0, 0, webcam.width, webcam.height);
   let vol = mic.getLevel();
-  let volSpeed = map(vol, 0, 0.5, 1, 30);
+  let volSpeed = map(vol, 0, 1, 1, 30);
   frameRate(volSpeed);
   
   fill('green');
